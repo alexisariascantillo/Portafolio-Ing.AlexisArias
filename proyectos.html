@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Ing. Alexis Arias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fbfbfd; color: #1d1d1f; overflow-x: hidden; margin: 0; padding: 0;
+        }
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+        }
+        .orb { position: fixed; border-radius: 50%; filter: blur(90px); z-index: -1; animation: float 12s infinite ease-in-out alternate; }
+        .orb-orange { width: 400px; height: 400px; background: rgba(255, 149, 0, 0.15); top: -5%; left: -5%; }
+        .orb-blue { width: 500px; height: 500px; background: rgba(0, 122, 255, 0.12); bottom: -10%; right: -10%; animation-delay: -5s; }
+        @keyframes float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(60px, 40px) scale(1.1); } }
+        .reveal { opacity: 0; transform: translateY(40px) scale(0.98); filter: blur(10px); transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        .project-card { transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+        .project-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 122, 255, 0.3); }
+    </style>
+</head>
+<body class="antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <div class="orb orb-orange"></div>
+    <div class="orb orb-blue"></div>
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 liquid-glass">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-semibold tracking-tight text-gray-900">Ing. Alexis Arias</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
+                <a href="index.html" class="hover:text-black transition-colors">Inicio</a>
+                <a href="proyectos.html" class="text-black font-semibold">Proyectos</a>
+                <!-- Enlace corregido a sobre-mi.html -->
+                <a href="sobre-mi.html" class="hover:text-black transition-colors">Sobre Mí</a>
+                <a href="index.html#contacto" class="hover:text-black transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN DE PROYECTOS -->
+    <section class="py-32 px-6 min-h-screen">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <h1 class="text-5xl font-bold tracking-tight mb-4 text-gray-900">Mis Proyectos</h1>
+                <p class="text-xl text-gray-500 font-light max-w-2xl mx-auto">
+                    Una selección de mis repositorios en GitHub. Desde plataformas financieras hasta infraestructura cloud y animaciones web.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Proyecto 1: AP Invest -->
+                <div class="liquid-glass project-card rounded-[2.5rem] p-10 reveal flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-sm font-semibold text-blue-500 uppercase tracking-wider">Desarrollo Backend / Web</h3>
+                            <i data-feather="bar-chart-2" class="text-gray-400"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold mb-4 text-gray-900">AP Invest (Mis Inversiones)</h4>
+                        <p class="text-gray-500 mb-6 text-lg leading-relaxed">
+                            Plataforma web de análisis financiero y gestión de portafolios. Implementa el algoritmo "AP Score" para evaluación de activos y migraciones de arquitectura usando SQLite.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Python</span>
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Flask</span>
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Pandas / yfinance</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 border-t border-gray-200/50 pt-6 mt-auto">
+                        <a href="https://github.com/tu-usuario/ap-invest" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-blue-600 transition-colors">
+                            <i data-feather="github" class="w-5 h-5"></i> Código fuente
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Arquitectura AWS -->
+                <div class="liquid-glass project-card rounded-[2.5rem] p-10 reveal flex flex-col justify-between h-full" style="transition-delay: 100ms;">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-sm font-semibold text-orange-500 uppercase tracking-wider">Cloud Computing</h3>
+                            <i data-feather="cloud" class="text-gray-400"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold mb-4 text-gray-900">Infraestructura AWS</h4>
+                        <p class="text-gray-500 mb-6 text-lg leading-relaxed">
+                            Diseño y cálculo de costos para topologías de red en la nube. Medición de latencias por región y configuración de instancias EC2 y bases de datos RDS.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">AWS EC2 / RDS</span>
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Redes</span>
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Calculadora AWS</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 border-t border-gray-200/50 pt-6 mt-auto">
+                        <a href="https://github.com/tu-usuario/aws-project" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-orange-500 transition-colors">
+                            <i data-feather="github" class="w-5 h-5"></i> Ver documentación
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 3: App Servicios Públicos -->
+                <div class="liquid-glass project-card rounded-[2.5rem] p-10 reveal flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-sm font-semibold text-indigo-500 uppercase tracking-wider">Product / UI UX</h3>
+                            <i data-feather="smartphone" class="text-gray-400"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold mb-4 text-gray-900">Gestor de Servicios Barranquilla</h4>
+                        <p class="text-gray-500 mb-6 text-lg leading-relaxed">
+                            Concepto de aplicación móvil para centralizar la gestión y recordatorios de pago de servicios públicos locales (Air-e, Triple A, Gases del Caribe).
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Análisis de Mercado</span>
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Diseño de Producto</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 border-t border-gray-200/50 pt-6 mt-auto">
+                        <a href="#" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-indigo-600 transition-colors">
+                            <i data-feather="layout" class="w-5 h-5"></i> Ver concepto
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: Animación Web -->
+                <div class="liquid-glass project-card rounded-[2.5rem] p-10 reveal flex flex-col justify-between h-full" style="transition-delay: 100ms;">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-sm font-semibold text-pink-500 uppercase tracking-wider">Frontend</h3>
+                            <i data-feather="monitor" class="text-gray-400"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold mb-4 text-gray-900">Animación Interactiva CSS/JS</h4>
+                        <p class="text-gray-500 mb-6 text-lg leading-relaxed">
+                            Desarrollo de un visual interactivo (árbol y corazón animado) escrito desde cero y automatizado mediante pipelines para su despliegue continuo.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">HTML / CSS</span>
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">JavaScript</span>
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">GitHub Pages</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 border-t border-gray-200/50 pt-6 mt-auto">
+                        <a href="https://github.com/tu-usuario/animation" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-pink-500 transition-colors">
+                            <i data-feather="github" class="w-5 h-5"></i> Código
+                        </a>
+                        <a href="#" target="_blank" class="flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-pink-500 transition-colors ml-4">
+                            <i data-feather="external-link" class="w-5 h-5"></i> Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script de inicialización -->
+    <script>
+        feather.replace();
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) reveals[i].classList.add("active");
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100);
+    </script>
+</body>
+</html>

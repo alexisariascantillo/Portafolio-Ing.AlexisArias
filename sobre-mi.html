@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí | Ing. Alexis Arias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fbfbfd; color: #1d1d1f; overflow-x: hidden; margin: 0; padding: 0;
+        }
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.65); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+        }
+        .orb { position: fixed; border-radius: 50%; filter: blur(90px); z-index: -1; animation: float 12s infinite ease-in-out alternate; }
+        .orb-orange { width: 400px; height: 400px; background: rgba(255, 149, 0, 0.15); top: -5%; left: -5%; }
+        .orb-blue { width: 500px; height: 500px; background: rgba(0, 122, 255, 0.12); bottom: -10%; right: -10%; animation-delay: -5s; }
+        @keyframes float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(60px, 40px) scale(1.1); } }
+        .reveal { opacity: 0; transform: translateY(40px) scale(0.98); filter: blur(10px); transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        .text-gradient { background: linear-gradient(135deg, #FF9500 0%, #007AFF 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Bento Box Hover Effects */
+        .bento-card { transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); overflow: hidden; position: relative; }
+        .bento-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08); }
+        .bento-image-bg { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0.4; transition: opacity 0.5s ease; z-index: -1; filter: grayscale(50%); }
+        .bento-card:hover .bento-image-bg { opacity: 0.8; filter: grayscale(0%); }
+    </style>
+</head>
+<body class="antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <div class="orb orb-orange"></div>
+    <div class="orb orb-blue"></div>
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 liquid-glass">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-semibold tracking-tight text-gray-900">Ing. Alexis Arias</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
+                <a href="index.html" class="hover:text-black transition-colors">Inicio</a>
+                <a href="proyectos.html" class="hover:text-black transition-colors">Proyectos</a>
+                <a href="sobre-mi.html" class="text-black font-semibold">Sobre Mí</a>
+                <a href="index.html#contacto" class="hover:text-black transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN SOBRE MÍ (BENTO BOX LAYOUT) -->
+    <section class="pt-32 pb-24 px-6 min-h-screen">
+        <div class="max-w-6xl mx-auto">
+            
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-sm font-semibold tracking-widest text-blue-500 uppercase mb-4">Conóceme</h2>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-gray-900">
+                    Código. Datos. <span class="text-gradient">Evolución.</span>
+                </h1>
+                <p class="text-xl text-gray-500 font-light max-w-3xl mx-auto leading-relaxed">
+                    No soy solo un programador escribiendo líneas en una pantalla. Soy un constructor de soluciones que entiende que la tecnología solo tiene sentido cuando resuelve problemas reales.
+                </p>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[250px]">
+                
+                <!-- Caja 1: Educación y Core (Grande) -->
+                <div class="bento-card liquid-glass rounded-[2rem] p-8 md:col-span-2 md:row-span-2 reveal flex flex-col justify-end">
+                    <div class="bento-image-bg" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="relative z-10 bg-white/80 backdrop-blur-md p-6 rounded-2xl border border-white/50">
+                        <i data-feather="cpu" class="text-blue-600 mb-4 w-8 h-8"></i>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">Ingeniería en Construcción</h3>
+                        <p class="text-gray-700 font-medium">4to Semestre • Universidad de la Costa (CUC)</p>
+                        <p class="text-gray-500 mt-3 text-sm leading-relaxed">
+                            Formándome académicamente en Ingeniería de Sistemas, pero aprendiendo constantemente por mi cuenta. Me apasiona la intersección entre el Desarrollo de Software, el Análisis de Datos y la creación de infraestructuras escalables.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Caja 2: Fintech y Finanzas (Mediana) -->
+                <div class="bento-card liquid-glass rounded-[2rem] p-8 md:col-span-2 lg:col-span-2 reveal flex flex-col justify-center relative overflow-hidden" style="transition-delay: 100ms;">
+                    <div class="absolute -right-10 -bottom-10 opacity-10">
+                        <i data-feather="trending-up" class="w-64 h-64"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 z-10">Finanzas & Mercado Bursátil</h3>
+                    <p class="text-gray-500 z-10 leading-relaxed">
+                        Soy un fiel creyente de salir del molde de la carrera. Mi curiosidad me ha llevado a devorar conceptos sobre la bolsa de valores y la economía. Esta exploración constante fue lo que me impulsó a fusionar el código con el mercado financiero, sentando las bases para proyectos de análisis como AP Invest.
+                    </p>
+                </div>
+
+                <!-- Caja 3: Aprendizaje Continuo (Pequeña) -->
+                <div class="bento-card liquid-glass rounded-[2rem] p-8 reveal flex flex-col justify-center items-center text-center" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                        <i data-feather="book-open" class="text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Eterno Estudiante</h3>
+                    <p class="text-sm text-gray-500">Siempre hay un nuevo framework, un nuevo mercado o una nueva métrica que analizar.</p>
+                </div>
+
+                <!-- Caja 4: Filosofía Visual y Referentes (Larga) -->
+                <div class="bento-card liquid-glass rounded-[2rem] p-8 md:col-span-3 lg:col-span-3 reveal flex flex-col justify-center" style="transition-delay: 300ms;">
+                    <div class="flex items-start gap-6">
+                        <div class="hidden sm:block mt-1">
+                            <i data-feather="aperture" class="w-10 h-10 text-orange-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">La Estética del Código</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Inspirado por la visión de líderes tecnológicos como Steve Jobs, Sergey Brin y Mark Zuckerberg, entiendo que el backend más potente no sirve de nada sin una experiencia mágica para el usuario. Disfruto aplicar un ojo casi editorial a mis interfaces, cuidando la tipografía, los flujos y la armonía visual de todo lo que construyo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caja 5: El Futuro (Pequeña con Gradiente) -->
+                <div class="bento-card rounded-[2rem] p-8 reveal flex flex-col justify-center relative overflow-hidden group cursor-pointer" style="transition-delay: 400ms;">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-orange-500 opacity-90 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative z-10 text-white text-center">
+                        <i data-feather="rocket" class="mx-auto mb-3 w-8 h-8"></i>
+                        <h3 class="text-lg font-bold mb-1">Hablemos de Fintech</h3>
+                        <p class="text-sm opacity-90">Construyamos el futuro.</p>
+                    </div>
+                    <a href="index.html#contacto" class="absolute inset-0 z-20"></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Script de inicialización -->
+    <script>
+        feather.replace();
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) reveals[i].classList.add("active");
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 100);
+    </script>
+</body>
+</html>

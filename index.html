@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ing. Alexis Arias | Portafolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fbfbfd;
+            color: #1d1d1f;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+        }
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: -1;
+            animation: float 12s infinite ease-in-out alternate;
+        }
+        .orb-orange {
+            width: 400px; height: 400px;
+            background: rgba(255, 149, 0, 0.15);
+            top: -5%; left: -5%;
+        }
+        .orb-blue {
+            width: 500px; height: 500px;
+            background: rgba(0, 122, 255, 0.12);
+            bottom: -10%; right: -10%;
+            animation-delay: -5s;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(60px, 40px) scale(1.1); }
+        }
+
+        /* Efecto de desvanecimiento y revelado suave (Scroll Reveal) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            filter: blur(10px);
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #FF9500 0%, #007AFF 100%);
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-apple { transition: all 0.3s ease; }
+        .btn-apple:hover { transform: scale(1.05); }
+        .project-card { transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+        .project-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 122, 255, 0.3); }
+    </style>
+</head>
+<body class="antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <div class="orb orb-orange"></div>
+    <div class="orb orb-blue"></div>
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 liquid-glass">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-semibold tracking-tight text-gray-900">Ing. Alexis Arias</a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-500">
+                <a href="index.html" class="text-black font-semibold">Inicio</a>
+                <a href="proyectos.html" class="hover:text-black transition-colors">Proyectos</a>
+                <a href="sobre-mi.html" class="hover:text-black transition-colors">Sobre Mí</a>
+                <a href="#contacto" class="hover:text-black transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Sección Hero (Inicio) -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="text-center max-w-4xl reveal active">
+            <h2 class="text-sm font-semibold tracking-widest text-gray-500 uppercase mb-4">Ingeniero de Sistemas</h2>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-gray-900 leading-tight">
+                Diseñando el futuro con <br>
+                <span class="text-gradient">código y creatividad.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-500 mb-10 font-light max-w-2xl mx-auto">
+                Especializado en crear arquitecturas robustas y experiencias digitales que se sienten mágicas.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#proyectos-preview" class="btn-apple bg-black text-white px-8 py-4 rounded-full font-medium text-lg">
+                    Ver mis proyectos
+                </a>
+                <a href="#contacto" class="btn-apple liquid-glass px-8 py-4 rounded-full font-medium text-lg text-gray-900">
+                    Contactar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Sección Sobre Mí (Resumen con 4 cajas) -->
+    <section id="sobre-mi" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto text-center reveal">
+            <h2 class="text-4xl font-bold tracking-tight mb-4 text-gray-900">Sobre Mí</h2>
+            <p class="text-xl text-gray-500 font-light leading-relaxed mb-16 max-w-3xl mx-auto">
+                Soy un ingeniero apasionado por la tecnología, el desarrollo de software y la infraestructura en la nube. Me enfoco en resolver problemas complejos mediante código limpio, metodologías ágiles y un diseño centrado en el usuario. 
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="liquid-glass p-8 rounded-3xl">
+                    <i data-feather="code" class="w-8 h-8 text-blue-500 mx-auto mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 mb-2">Desarrollo</h3>
+                    <p class="text-sm text-gray-500">Python, JavaScript, HTML/CSS, Bases de datos.</p>
+                </div>
+                <div class="liquid-glass p-8 rounded-3xl">
+                    <i data-feather="server" class="w-8 h-8 text-orange-500 mx-auto mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 mb-2">Infraestructura</h3>
+                    <p class="text-sm text-gray-500">AWS, Redes, Diseño de topologías escalables.</p>
+                </div>
+                <div class="liquid-glass p-8 rounded-3xl">
+                    <i data-feather="layout" class="w-8 h-8 text-indigo-500 mx-auto mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 mb-2">UI / UX</h3>
+                    <p class="text-sm text-gray-500">Interfaces limpias, creativas y funcionales.</p>
+                </div>
+                <div class="liquid-glass p-8 rounded-3xl">
+                    <i data-feather="pie-chart" class="w-8 h-8 text-pink-500 mx-auto mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 mb-2">Análisis de Datos</h3>
+                    <p class="text-sm text-gray-500">Excel, gráficos y métricas financieras.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <a href="sobre-mi.html" class="text-blue-600 font-medium hover:text-blue-700 transition-colors inline-flex items-center gap-2">
+                    Conoce más sobre mi historia completa <i data-feather="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Sección Proyectos (Previsualización con dos tarjetas lado a lado) -->
+    <section id="proyectos-preview" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto w-full">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold tracking-tight mb-4 text-gray-900">Trabajos Destacados</h2>
+                <p class="text-xl text-gray-500 font-light max-w-2xl mx-auto">
+                    Un vistazo a mis soluciones principales en desarrollo financiero y cloud computing.
+                </p>
+            </div>
+
+            <!-- Cuadrícula de 2 columnas para los dos proyectos destacados -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- Tarjeta 1: Mis Inversiones -->
+                <div class="liquid-glass project-card rounded-[2.5rem] p-10 reveal flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-sm font-semibold text-blue-500 uppercase tracking-wider">Desarrollo Web & Fintech</h3>
+                            <i data-feather="bar-chart-2" class="text-gray-400"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold mb-4 text-gray-900">Mis Inversiones (Software de Análisis Financiero)</h4>
+                        <p class="text-gray-500 mb-6 text-lg leading-relaxed">
+                            Plataforma web de análisis financiero y gestión de portafolios. Implementa algoritmos propios para evaluación de activos, gráficos interactivos de rendimiento y procesamiento de datos bursátiles.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Python</span>
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Flask</span>
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Pandas / yfinance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Cloud Computing con AWS -->
+                <div class="liquid-glass project-card rounded-[2.5rem] p-10 reveal flex flex-col justify-between" style="transition-delay: 150ms;">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-sm font-semibold text-orange-500 uppercase tracking-wider">Infraestructura & Cloud</h3>
+                            <i data-feather="cloud" class="text-gray-400"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold mb-4 text-gray-900">Cloud Computing con AWS</h4>
+                        <p class="text-gray-500 mb-6 text-lg leading-relaxed">
+                            Diseño y despliegue de topologías de red escalables en la nube. Medición de latencias por región, cálculo de costos de infraestructura y configuración de instancias EC2 y bases de datos RDS.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">AWS EC2 / RDS</span>
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Redes y Latencias</span>
+                            <span class="px-4 py-1.5 liquid-glass rounded-full text-xs font-semibold text-gray-700">Calculadora AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Botón para ir a proyectos.html -->
+            <div class="text-center mt-12 reveal">
+                <a href="proyectos.html" class="btn-apple liquid-glass inline-flex items-center gap-2 px-8 py-4 rounded-full font-medium text-lg text-gray-900 hover:text-blue-600">
+                    Ver todos mis proyectos completos <i data-feather="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Footer / Contacto -->
+    <footer id="contacto" class="py-24 px-6 liquid-glass mt-10">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">¿Listo para crear algo increíble?</h2>
+            <p class="text-xl text-gray-500 mb-10 font-light">Escríbeme o conéctate conmigo en mis redes profesionales.</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-12">
+                <a href="mailto:alexis.ariascaantillo@gmail.com" class="text-lg font-semibold text-blue-600 hover:text-blue-700 transition-colors flex items-center gap-2 liquid-glass px-6 py-3 rounded-full">
+                    <i data-feather="mail" class="w-5 h-5"></i> alexis.ariascaantillo@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/alexis-arias-54341336b/" target="_blank" class="text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors flex items-center gap-2 liquid-glass px-6 py-3 rounded-full">
+                    <i data-feather="linkedin" class="w-5 h-5"></i> Perfil de LinkedIn
+                </a>
+            </div>
+
+            <div class="mt-16 text-sm text-gray-400">
+                <p>&copy; 2026 Ing. Alexis Arias. Diseñado con pasión.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de inicialización y animación de desvanecimiento al hacer Scroll -->
+    <script>
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.reveal').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
